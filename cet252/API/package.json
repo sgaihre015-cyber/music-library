@@ -1,0 +1,28 @@
+{
+  "name": "music-library-api",
+  "version": "1.0.0",
+  "description": "REST API prototype for portfolio task B2",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node src/server.js",
+    "seed": "node src/seed.js",
+    "test": "jest --runInBand",
+    "docs": "node src/generate-docs.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "sqlite3": "^6.0.1"
+  },
+  "devDependencies": {
+    "jest": "^30.3.0",
+    "supertest": "^7.2.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-dist": "^5.32.1"
+  }
+}
