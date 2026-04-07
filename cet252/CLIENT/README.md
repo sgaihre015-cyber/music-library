@@ -15,4 +15,4 @@ The client runs at `http://127.0.0.1:4173` and reads data from `http://localhost
 
 - `npm test`
 
-The test runner starts both API and client servers automatically.
+The test runner installs the Chromium browser (if needed), then starts both API and client servers automatically.
