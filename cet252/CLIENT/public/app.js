@@ -36,8 +36,13 @@ const renderRows = (tracks) => {
 
     const meta = document.createElement('p');
     meta.className = 'track-meta';
-    meta.textContent = `${track.genre} • ${track.year} • ${track.album}`;
+    meta.textContent = `${track.genre} • ${track.year} • ${track.album} • ${track.duration_seconds}s`;
     card.appendChild(meta);
+
+    const summary = document.createElement('p');
+    summary.className = 'track-summary';
+    summary.textContent = `${track.title} is a ${track.genre.toLowerCase()} track by ${track.artist}.`;
+    card.appendChild(summary);
 
     const actions = document.createElement('div');
     actions.className = 'track-actions';

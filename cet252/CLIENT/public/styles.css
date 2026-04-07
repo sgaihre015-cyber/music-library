@@ -119,6 +119,12 @@ body {
   font-size: 0.92rem;
 }
 
+.track-summary {
+  margin: 0.65rem 0 0;
+  color: #334155;
+  min-height: 2.8rem;
+}
+
 .track-actions {
   display: flex;
   gap: 0.55rem;
