@@ -1,11 +1,22 @@
 const express = require('express');
 const cors = require('cors');
+const rateLimit = require('express-rate-limit');
 const { db, initializeDb } = require('./db');
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use(
+  '/api',
+  rateLimit({
+    windowMs: 15 * 60 * 1000,
+    limit: 120,
+    standardHeaders: true,
+    legacyHeaders: false,
+    message: { error: 'Too many requests, please try again later.' }
+  })
+);
 
 function validateAlbum(payload) {
   const required = ['title', 'artist', 'genre', 'year', 'tracks'];
