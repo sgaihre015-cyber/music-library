@@ -1,0 +1,17 @@
+{
+  "name": "music-library-client",
+  "version": "1.0.0",
+  "description": "Client prototype for portfolio task B2",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node tests/client.test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "jsdom": "^29.0.2"
+  }
+}
