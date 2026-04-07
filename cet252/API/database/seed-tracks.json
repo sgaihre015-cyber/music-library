@@ -1,0 +1,22 @@
+[
+  { "title": "Take Five", "artist": "The Dave Brubeck Quartet", "album": "Time Out", "genre": "Jazz", "year": 1959, "duration_seconds": 324 },
+  { "title": "So What", "artist": "Miles Davis", "album": "Kind of Blue", "genre": "Jazz", "year": 1959, "duration_seconds": 545 },
+  { "title": "Hysteria", "artist": "Muse", "album": "Absolution", "genre": "Alternative Rock", "year": 2003, "duration_seconds": 227 },
+  { "title": "Billie Jean", "artist": "Michael Jackson", "album": "Thriller", "genre": "Pop", "year": 1982, "duration_seconds": 294 },
+  { "title": "Bohemian Rhapsody", "artist": "Queen", "album": "A Night at the Opera", "genre": "Rock", "year": 1975, "duration_seconds": 355 },
+  { "title": "Smells Like Teen Spirit", "artist": "Nirvana", "album": "Nevermind", "genre": "Grunge", "year": 1991, "duration_seconds": 301 },
+  { "title": "Hey Ya!", "artist": "OutKast", "album": "Speakerboxxx/The Love Below", "genre": "Hip-Hop", "year": 2003, "duration_seconds": 236 },
+  { "title": "Rolling in the Deep", "artist": "Adele", "album": "21", "genre": "Soul", "year": 2010, "duration_seconds": 229 },
+  { "title": "Blinding Lights", "artist": "The Weeknd", "album": "After Hours", "genre": "Synthwave", "year": 2019, "duration_seconds": 200 },
+  { "title": "Levitating", "artist": "Dua Lipa", "album": "Future Nostalgia", "genre": "Pop", "year": 2020, "duration_seconds": 203 },
+  { "title": "Numb", "artist": "Linkin Park", "album": "Meteora", "genre": "Nu Metal", "year": 2003, "duration_seconds": 186 },
+  { "title": "Fix You", "artist": "Coldplay", "album": "X&Y", "genre": "Alternative Rock", "year": 2005, "duration_seconds": 295 },
+  { "title": "Shape of You", "artist": "Ed Sheeran", "album": "÷", "genre": "Pop", "year": 2017, "duration_seconds": 234 },
+  { "title": "Lose Yourself", "artist": "Eminem", "album": "8 Mile", "genre": "Hip-Hop", "year": 2002, "duration_seconds": 326 },
+  { "title": "Uptown Funk", "artist": "Mark Ronson ft. Bruno Mars", "album": "Uptown Special", "genre": "Funk", "year": 2014, "duration_seconds": 270 },
+  { "title": "Halo", "artist": "Beyoncé", "album": "I Am... Sasha Fierce", "genre": "R&B", "year": 2008, "duration_seconds": 261 },
+  { "title": "Strobe", "artist": "deadmau5", "album": "For Lack of a Better Name", "genre": "Electronic", "year": 2009, "duration_seconds": 631 },
+  { "title": "Titanium", "artist": "David Guetta ft. Sia", "album": "Nothing but the Beat", "genre": "Dance", "year": 2011, "duration_seconds": 245 },
+  { "title": "Can't Hold Us", "artist": "Macklemore & Ryan Lewis", "album": "The Heist", "genre": "Hip-Hop", "year": 2011, "duration_seconds": 258 },
+  { "title": "Bad Guy", "artist": "Billie Eilish", "album": "When We All Fall Asleep, Where Do We Go?", "genre": "Electropop", "year": 2019, "duration_seconds": 194 }
+]
