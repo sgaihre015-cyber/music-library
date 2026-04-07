@@ -6,6 +6,13 @@ beforeAll(async () => {
 });
 
 describe('Music Library API', () => {
+  test('GET / serves API HTML page', async () => {
+    const response = await request(app).get('/');
+    expect(response.status).toBe(200);
+    expect(response.headers['content-type']).toContain('text/html');
+    expect(response.text).toContain('Music Library API');
+  });
+
   test('GET /health returns status ok', async () => {
     const response = await request(app).get('/health');
     expect(response.status).toBe(200);

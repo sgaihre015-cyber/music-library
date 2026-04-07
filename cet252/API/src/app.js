@@ -1,12 +1,14 @@
 const express = require('express');
 const cors = require('cors');
 const rateLimit = require('express-rate-limit');
+const path = require('path');
 const { db, initializeDb } = require('./db');
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(
   '/api',
   rateLimit({
@@ -49,6 +51,10 @@ function validateAlbum(payload) {
  */
 app.get('/health', (_, res) => {
   res.json({ status: 'ok' });
+});
+
+app.get('/', (_, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 /**
