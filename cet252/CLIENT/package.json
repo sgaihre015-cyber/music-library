@@ -4,9 +4,9 @@
   "description": "Music Library client prototype",
   "main": "src/index.html",
   "scripts": {
-    "test": "npm --prefix ../API ci && npx playwright install chromium && playwright test",
+    "test": "npm ci && npm --prefix ../API ci && npx playwright install chromium && npx playwright test",
     "start": "http-server src -p 4173 -c-1 --silent",
-    "test:headed": "playwright test --headed"
+    "test:headed": "npx playwright test --headed"
   },
   "keywords": [],
   "author": "",
