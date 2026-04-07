@@ -3,15 +3,15 @@ const path = require('path');
 const request = require('supertest');
 
 const testDbPath = path.join(__dirname, 'test-music-library.db');
+if (fs.existsSync(testDbPath)) {
+  fs.unlinkSync(testDbPath);
+}
 process.env.DB_FILE = testDbPath;
 
 const app = require('../src/app');
 const { initDb, closeDb } = require('../src/db');
 
 beforeAll(async () => {
-  if (fs.existsSync(testDbPath)) {
-    fs.unlinkSync(testDbPath);
-  }
   await initDb();
 });
 
