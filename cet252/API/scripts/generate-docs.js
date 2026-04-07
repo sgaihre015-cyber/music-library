@@ -1,0 +1,48 @@
+const fs = require('fs');
+const path = require('path');
+
+const sourceOpenApi = path.join(__dirname, '..', 'docs', 'openapi.json');
+const outputDir = path.join(__dirname, '..', '..', 'APIDOC');
+const outputOpenApi = path.join(outputDir, 'openapi.json');
+const outputHtml = path.join(outputDir, 'index.html');
+
+const html = `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Music Library API Docs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; background:#f8fafc; color:#0f172a; }
+    pre { background:#0f172a; color:#e2e8f0; padding:1rem; border-radius:8px; overflow:auto; }
+    a { color:#2563eb; }
+  </style>
+</head>
+<body>
+  <h1>Music Library API Documentation</h1>
+  <p>Generated documentation for local tutor review.</p>
+  <p><a href="./openapi.json">Download OpenAPI JSON</a></p>
+  <h2>Endpoints</h2>
+  <ul>
+    <li>GET /health</li>
+    <li>GET /api/albums</li>
+    <li>GET /api/albums/:id</li>
+    <li>POST /api/albums</li>
+    <li>PUT /api/albums/:id</li>
+    <li>DELETE /api/albums/:id</li>
+  </ul>
+  <h2>OpenAPI Preview</h2>
+  <pre id="spec"></pre>
+  <script>
+    fetch('./openapi.json').then((r) => r.json()).then((spec) => {
+      document.getElementById('spec').textContent = JSON.stringify(spec, null, 2);
+    });
+  </script>
+</body>
+</html>`;
+
+fs.mkdirSync(outputDir, { recursive: true });
+fs.copyFileSync(sourceOpenApi, outputOpenApi);
+fs.writeFileSync(outputHtml, html);
+
+console.log(`Generated docs to ${outputDir}`);
