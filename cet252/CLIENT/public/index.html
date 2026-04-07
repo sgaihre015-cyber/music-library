@@ -7,19 +7,41 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main>
-      <h1>Music Library</h1>
-      <p id="status">Loading tracks...</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Artist</th>
-            <th>Album</th>
-            <th>Genre</th>
-            <th>Year</th>
-          </tr>
-        </thead>
+    <header class="hero">
+      <div class="hero-content">
+        <h1>🎵 Music Library</h1>
+        <p>Manage your music collection</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="toolbar">
+        <input type="text" placeholder="Search by title or artist..." />
+        <button type="button">Search</button>
+        <button type="button" class="secondary">Clear</button>
+      </section>
+
+      <section class="toolbar compact">
+        <label>
+          Genre:
+          <select>
+            <option>All Genres</option>
+          </select>
+        </label>
+        <label>
+          Availability:
+          <select>
+            <option>Available</option>
+          </select>
+        </label>
+        <button type="button" class="add">+ Add Track</button>
+      </section>
+
+      <p id="status" class="status">Loading tracks...</p>
+
+      <section id="trackCards" class="track-grid" aria-live="polite"></section>
+
+      <table class="legacy-table" aria-hidden="true">
         <tbody id="trackRows"></tbody>
       </table>
     </main>

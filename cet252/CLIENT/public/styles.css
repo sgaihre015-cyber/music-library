@@ -1,37 +1,147 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0f172a;
-  color: #e2e8f0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #eef2f8;
+  color: #1f2937;
 }
 
-main {
-  max-width: 1000px;
-  margin: 2rem auto;
+.hero {
+  background: linear-gradient(90deg, #0b4ea2, #0a67c8);
+  color: #fff;
+  padding: 1.5rem 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.hero-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 2.2rem;
+}
+
+.hero p {
+  margin: 0.35rem 0 0;
+  opacity: 0.9;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 1.5rem auto;
+  padding: 0 1rem 1rem;
+}
+
+.toolbar {
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+  margin-bottom: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.toolbar input,
+.toolbar select,
+.toolbar button {
+  border: 1px solid #c8d4e5;
+  border-radius: 9px;
+  padding: 0.65rem 0.9rem;
+  font-size: 1rem;
+}
+
+.toolbar input {
+  flex: 1 1 560px;
+}
+
+.toolbar button {
+  background: #0b63c8;
+  color: #fff;
+  border-color: #0b63c8;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.toolbar button.secondary {
+  background: #8093b0;
+  border-color: #8093b0;
+}
+
+.toolbar button.add {
+  background: #0e8a5f;
+  border-color: #0e8a5f;
+}
+
+.status {
+  margin: 0.35rem 0 0.85rem;
+  color: #334155;
+}
+
+.track-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.track-card {
+  background: #ffffff;
+  border: 1px solid #d8e1ee;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
   padding: 1rem;
 }
 
-h1 {
-  margin-bottom: 0.75rem;
+.badge {
+  display: inline-block;
+  background: #dcfce7;
+  color: #166534;
+  border-radius: 999px;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
 }
 
-#status {
-  margin-bottom: 1rem;
+.track-title {
+  margin: 0;
+  font-size: 1.55rem;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: #1e293b;
+.track-artist {
+  margin: 0.2rem 0 0.45rem;
+  color: #374151;
 }
 
-th,
-td {
-  border: 1px solid #334155;
-  padding: 0.75rem;
-  text-align: left;
+.track-meta {
+  margin: 0;
+  color: #475569;
+  font-size: 0.92rem;
 }
 
-th {
-  background: #334155;
+.track-actions {
+  display: flex;
+  gap: 0.55rem;
+  margin-top: 0.9rem;
+}
+
+.track-actions button {
+  flex: 1;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+.track-actions .edit {
+  background: #dc6a1f;
+}
+
+.track-actions .delete {
+  background: #cf2f58;
+}
+
+.legacy-table {
+  display: none;
 }

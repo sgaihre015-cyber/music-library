@@ -1,19 +1,62 @@
 const statusElement = document.getElementById('status');
 const rowsContainer = document.getElementById('trackRows');
+const cardsContainer = document.getElementById('trackCards');
 
 const renderRows = (tracks) => {
   rowsContainer.innerHTML = '';
+  cardsContainer.innerHTML = '';
 
   for (const track of tracks) {
     const row = document.createElement('tr');
-    row.innerHTML = `
-      <td>${track.title}</td>
-      <td>${track.artist}</td>
-      <td>${track.album}</td>
-      <td>${track.genre}</td>
-      <td>${track.year}</td>
-    `;
+    const cells = [track.title, track.artist, track.album, track.genre, String(track.year)];
+    for (const value of cells) {
+      const cell = document.createElement('td');
+      cell.textContent = value;
+      row.appendChild(cell);
+    }
     rowsContainer.appendChild(row);
+
+    const card = document.createElement('article');
+    card.className = 'track-card';
+
+    const badge = document.createElement('span');
+    badge.className = 'badge';
+    badge.textContent = '✅ Available';
+    card.appendChild(badge);
+
+    const title = document.createElement('h2');
+    title.className = 'track-title';
+    title.textContent = track.title;
+    card.appendChild(title);
+
+    const artist = document.createElement('p');
+    artist.className = 'track-artist';
+    artist.textContent = `by ${track.artist}`;
+    card.appendChild(artist);
+
+    const meta = document.createElement('p');
+    meta.className = 'track-meta';
+    meta.textContent = `${track.genre} • ${track.year} • ${track.album}`;
+    card.appendChild(meta);
+
+    const actions = document.createElement('div');
+    actions.className = 'track-actions';
+
+    const editBtn = document.createElement('button');
+    editBtn.className = 'edit';
+    editBtn.type = 'button';
+    editBtn.textContent = '✏ Edit';
+
+    const deleteBtn = document.createElement('button');
+    deleteBtn.className = 'delete';
+    deleteBtn.type = 'button';
+    deleteBtn.textContent = '🗑 Delete';
+
+    actions.appendChild(editBtn);
+    actions.appendChild(deleteBtn);
+    card.appendChild(actions);
+
+    cardsContainer.appendChild(card);
   }
 };
 
