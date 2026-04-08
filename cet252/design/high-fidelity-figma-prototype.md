@@ -4,6 +4,6 @@
 - [x] Realistic album data and imagery identified
 - [x] Prototype-mode navigation map defined
 - [x] Design-mode annotations prepared for review
-- [ ] Add final Figma share link here: `<ADD_FIGMA_LINK>`
+- [ ] Add final Figma share link here: `<PASTE_REAL_FIGMA_URL_HERE>`
 
-> Note: Replace placeholder with the live Figma URL before final submission.
+> Required: paste the live interactive Figma prototype URL before final submission.

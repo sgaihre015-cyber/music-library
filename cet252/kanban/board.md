@@ -2,23 +2,35 @@
 
 ## To Do
 - Prepare screencast with narration + webcam
-- Export final zip package (`cet252.zip`)
+- Export final zip package (`cet252.zip`) after screencast capture
 
 ## In Progress
-- Final polish and walkthrough rehearsal
+- Final walkthrough rehearsal and submission checks
 
 ## Review
-- Validate all tutor run paths (API docs, API start, client start, tests)
+- Verify final tutor evidence bundle (video + figma link + zip upload)
 
 ## Done
 - Define user stories and acceptance criteria
 - Build API CRUD endpoints with JSON responses
 - Seed SQLite database with realistic records
 - Add APIDOC comments and docs generation script
+- Serve generated docs from API at `GET /docs` for localhost tutor access
 - Build high-fidelity client GET integration
 - Add functional tests for success + error path
 - Create lo-fi wireframe notes and Figma prototype checklist
+- Confirm tutor execution root and startup/test instructions in README files
 - Keep incremental commit history
+
+## Submission Evidence Checklist
+- [x] CRUD API endpoints (GET/POST/PUT/DELETE) returning JSON
+- [x] SQLite data set with 20+ realistic records
+- [x] API documentation generation and localhost docs route
+- [x] Client GET integration against local API
+- [x] Functional test suite (Playwright)
+- [ ] Final screencast with narration + webcam
+- [ ] Final Figma link pasted in `design/high-fidelity-figma-prototype.md`
+- [ ] Final zip export and upload
 
 ## User Stories and Acceptance Criteria
 1. As a user, I can list albums so that I can browse the library.

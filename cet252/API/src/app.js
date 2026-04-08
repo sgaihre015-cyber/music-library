@@ -5,6 +5,7 @@ const path = require('path');
 const { db, initializeDb } = require('./db');
 
 const app = express();
+const docsDir = path.join(__dirname, '..', '..', 'APIDOC');
 
 app.use(cors());
 app.use(express.json());
@@ -56,6 +57,12 @@ app.get('/health', (_, res) => {
 app.get('/', (_, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
+
+app.get('/docs', (_, res) => {
+  res.sendFile(path.join(docsDir, 'index.html'));
+});
+
+app.use('/docs', express.static(docsDir));
 
 /**
  * @api {get} /api/albums List albums

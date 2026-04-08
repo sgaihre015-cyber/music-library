@@ -2,12 +2,13 @@
 
 ## Start locally
 
-1. Install dependencies:
+1. Start API first (from `../API`):
    - `npm install`
-2. Start the client app:
+   - `npm run docs`
    - `npm start`
-3. In a separate terminal, start the API:
-   - `npm --prefix ../API start`
+2. In this `CLIENT` folder:
+   - `npm install`
+   - `npm start`
 
 The client runs at `http://127.0.0.1:4173` and reads data from `http://localhost:3001/api/albums`.
 
