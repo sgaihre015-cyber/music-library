@@ -55,7 +55,7 @@ app.get('/health', (_, res) => {
 });
 
 app.get('/', (_, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, '..', '..', 'APIDOC', 'index.html'));
 });
 
 /**
