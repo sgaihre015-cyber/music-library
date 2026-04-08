@@ -1,14 +1,36 @@
-const { spawn } = require('child_process');
+const fs = require('fs');
+const path = require('path');
+const { spawn, spawnSync } = require('child_process');
 
 const npmCmd = process.platform === 'win32' ? 'npm.cmd' : 'npm';
 
 const services = [
-  { name: 'API', args: ['--prefix', 'cet252/API', 'start'] },
-  { name: 'CLIENT', args: ['--prefix', 'cet252/CLIENT', 'start'] }
+  { name: 'API', prefix: path.join(__dirname, '..', 'cet252', 'API') },
+  { name: 'CLIENT', prefix: path.join(__dirname, '..', 'cet252', 'CLIENT') }
 ];
 
+function installIfNeeded(service) {
+  const nodeModulesPath = path.join(service.prefix, 'node_modules');
+
+  if (fs.existsSync(nodeModulesPath)) {
+    return;
+  }
+
+  console.log(`[${service.name}] Installing dependencies (npm ci)...`);
+  const installResult = spawnSync(npmCmd, ['--prefix', service.prefix, 'ci'], {
+    stdio: 'inherit',
+    env: process.env
+  });
+
+  if (installResult.status !== 0) {
+    process.exit(installResult.status || 1);
+  }
+}
+
+services.forEach(installIfNeeded);
+
 const children = services.map((service) => {
-  const child = spawn(npmCmd, service.args, {
+  const child = spawn(npmCmd, ['--prefix', service.prefix, 'run', 'start'], {
     stdio: 'inherit',
     env: process.env
   });

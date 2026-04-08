@@ -13,91 +13,53 @@ const html = `<!doctype html>
   <title>Music Library API</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    :root { color-scheme: light; font-family: Arial, sans-serif; }
-    * { box-sizing: border-box; }
-    body { margin: 0; color:#0f172a; background:#fff; }
-    .layout { display:flex; min-height:100vh; }
-    .sidebar {
-      width: 280px;
-      background:#111827;
-      color:#f8fafc;
-      padding: 1rem;
-      overflow:auto;
-      border-right:1px solid #1f2937;
-    }
-    .sidebar h2 { margin:0 0 0.75rem; font-size:1.1rem; }
-    .sidebar a { color:#f8fafc; display:block; padding:0.45rem 0.4rem; text-decoration:none; border-radius:6px; margin:0.2rem 0; }
-    .sidebar a:hover { background:#1f2937; }
-    .content { flex:1; padding:1.25rem 2rem; overflow:auto; }
-    h1 { margin:0 0 0.2rem; font-size:3rem; }
-    .subtitle { margin:0 0 1.25rem; font-size:1.1rem; color:#334155; }
-    section { margin:1.25rem 0 1.6rem; }
-    h3 { color:#0ea5e9; margin:0 0 0.55rem; font-size:2rem; }
-    .endpoint { border:1px solid #d1d5db; border-radius:8px; margin:0.6rem 0; overflow:hidden; }
-    .endpoint-header { padding:0.65rem 0.85rem; background:#f8fafc; border-bottom:1px solid #e5e7eb; font-size:1.05rem; }
-    .method { display:inline-block; min-width:58px; text-align:center; font-weight:700; font-size:0.82rem; padding:0.2rem 0.4rem; border-radius:4px; color:#fff; margin-right:0.5rem; }
-    .get { background:#2563eb; }
-    .post { background:#16a34a; }
-    .put { background:#d97706; }
-    .delete { background:#dc2626; }
+    body { margin: 0; padding: 1.5rem; font-family: Arial, sans-serif; color: #0f172a; background: #fff; }
+    h1 { margin: 0 0 0.5rem; }
+    p { margin: 0.35rem 0 1rem; }
+    .section-title { margin-top: 1.5rem; }
+    .endpoint { border: 1px solid #d1d5db; border-radius: 8px; padding: 0.85rem; margin: 0.7rem 0; }
+    .method { font-weight: 700; display: inline-block; min-width: 55px; }
     .path { font-family: ui-monospace, Menlo, monospace; }
-    .endpoint-body { padding:0.75rem 0.85rem; color:#334155; }
-    .code { background:#111827; color:#e2e8f0; padding:0.75rem; border-radius:6px; overflow:auto; font-family: ui-monospace, Menlo, monospace; }
-    @media (max-width: 920px) {
-      .layout { display:block; }
-      .sidebar { width:100%; }
-      .content { padding:1rem; }
-      h1 { font-size:2.2rem; }
-    }
+    .hint { color: #334155; margin-top: 0.45rem; }
+    a { color: #0b63d1; }
   </style>
 </head>
 <body>
-  <div class="layout">
-    <aside class="sidebar">
-      <h2>Music Library</h2>
-      <a href="#albums-create">Create an album <span class="path">/api/albums</span></a>
-      <a href="#albums-delete">Delete an album <span class="path">/api/albums/:id</span></a>
-      <a href="#albums-one">Get a single album <span class="path">/api/albums/:id</span></a>
-      <a href="#albums-all">Get all albums <span class="path">/api/albums</span></a>
-      <a href="#health">API health check <span class="path">/health</span></a>
-      <a href="./openapi.json">Download OpenAPI JSON</a>
-    </aside>
-    <main class="content">
-      <h1>Music Library API</h1>
-      <p class="subtitle">REST API documentation for the Music Library prototype</p>
+  <h1>Music Library API</h1>
+  <p>REST API documentation for the Music Library prototype.</p>
+  <p><a href="./openapi.json">Download OpenAPI JSON</a></p>
 
-      <section>
-        <h3>Albums</h3>
-      </section>
+  <h2 class="section-title">Albums</h2>
 
-      <section id="albums-create" class="endpoint">
-        <div class="endpoint-header"><span class="method post">POST</span><span>Create a new album</span></div>
-        <div class="endpoint-body">
-          <div class="code">http://localhost:3001/api/albums</div>
-          <p>Required fields: <b>title</b>, <b>artist</b>, <b>genre</b>, <b>year</b>, <b>tracks</b>.</p>
-        </div>
-      </section>
+  <div class="endpoint">
+    <div><span class="method">POST</span> <span class="path">/api/albums</span></div>
+    <div class="hint">Create a new album. Required fields: title, artist, genre, year, tracks.</div>
+  </div>
 
-      <section id="albums-delete" class="endpoint">
-        <div class="endpoint-header"><span class="method delete">DELETE</span><span>Delete an album</span></div>
-        <div class="endpoint-body"><div class="code">http://localhost:3001/api/albums/:id</div></div>
-      </section>
+  <div class="endpoint">
+    <div><span class="method">GET</span> <span class="path">/api/albums</span></div>
+    <div class="hint">Get all albums.</div>
+  </div>
 
-      <section id="albums-one" class="endpoint">
-        <div class="endpoint-header"><span class="method get">GET</span><span>Get a single album</span></div>
-        <div class="endpoint-body"><div class="code">http://localhost:3001/api/albums/:id</div></div>
-      </section>
+  <div class="endpoint">
+    <div><span class="method">GET</span> <span class="path">/api/albums/:id</span></div>
+    <div class="hint">Get a single album.</div>
+  </div>
 
-      <section id="albums-all" class="endpoint">
-        <div class="endpoint-header"><span class="method get">GET</span><span>Get all albums</span></div>
-        <div class="endpoint-body"><div class="code">http://localhost:3001/api/albums</div></div>
-      </section>
+  <div class="endpoint">
+    <div><span class="method">PUT</span> <span class="path">/api/albums/:id</span></div>
+    <div class="hint">Update an album.</div>
+  </div>
 
-      <section id="health" class="endpoint">
-        <div class="endpoint-header"><span class="method get">GET</span><span>API health check</span></div>
-        <div class="endpoint-body"><div class="code">http://localhost:3001/health</div></div>
-      </section>
-    </main>
+  <div class="endpoint">
+    <div><span class="method">DELETE</span> <span class="path">/api/albums/:id</span></div>
+    <div class="hint">Delete an album.</div>
+  </div>
+
+  <h2 class="section-title">System</h2>
+  <div class="endpoint">
+    <div><span class="method">GET</span> <span class="path">/health</span></div>
+    <div class="hint">API health check.</div>
   </div>
 </body>
 </html>`;
