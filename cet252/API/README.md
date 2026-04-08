@@ -13,7 +13,14 @@ API runs locally at `http://localhost:3001`.
 - `npm start` - run API server
 - `npm run dev` - run API with nodemon
 - `npm test` - run API tests
+- `npm run seed` - initialize DB and ensure seeded records
 - `npm run docs` - generate API docs into `../APIDOC`
+- `npm run build:docs` - alias for docs generation
+
+## Docs route
+
+After running `npm run docs`, generated docs are available at:
+- `http://localhost:3001/docs`
 
 ## Endpoints
 - `GET /health`

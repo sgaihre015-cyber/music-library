@@ -7,18 +7,47 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header>
-      <h1>Music Library Dashboard</h1>
-      <p>Browse all albums from the local API prototype.</p>
+    <header class="hero">
+      <h1>🎵 Music Library</h1>
+      <p>Manage your album collection</p>
     </header>
 
     <main>
-      <div class="actions">
-        <button id="reloadBtn">Reload Albums</button>
-        <button id="simulateErrorBtn">Simulate API Error</button>
+      <section class="toolbar">
+        <input id="searchInput" type="text" placeholder="Search by album or artist..." />
+        <button id="searchBtn" class="btn btn-primary">Search</button>
+        <button id="clearBtn" class="btn btn-muted">Clear</button>
+      </section>
+
+      <section class="filters">
+        <label>
+          Genre:
+          <select id="genreFilter">
+            <option value="all">All Genres</option>
+          </select>
+        </label>
+        <button id="addNewBtn" class="btn btn-success">+ Add Album</button>
+      </section>
+
+      <section id="formSection" class="form-wrap hidden">
+        <h2 id="formTitle">Add Album</h2>
+        <form id="albumForm">
+          <input id="titleInput" type="text" placeholder="Title" required />
+          <input id="artistInput" type="text" placeholder="Artist" required />
+          <input id="genreInput" type="text" placeholder="Genre" required />
+          <input id="yearInput" type="number" min="1900" max="2100" placeholder="Year" required />
+          <input id="tracksInput" type="number" min="1" max="50" placeholder="Tracks" required />
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="button" id="cancelEditBtn" class="btn btn-muted">Cancel</button>
+          </div>
+        </form>
+      </section>
+
+      <div class="status-row">
+        <p id="status" aria-live="polite">Loading albums...</p>
       </div>
 
-      <p id="status" aria-live="polite">Loading albums...</p>
       <section id="albumGrid" class="grid"></section>
     </main>
 

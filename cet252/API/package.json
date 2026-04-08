@@ -7,7 +7,9 @@
     "test": "jest --runInBand",
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
-    "docs": "node scripts/generate-docs.js"
+    "docs": "node scripts/generate-docs.js",
+    "build:docs": "node scripts/generate-docs.js",
+    "seed": "node src/seed.js"
   },
   "keywords": [],
   "author": "",
