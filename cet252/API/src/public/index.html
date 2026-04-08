@@ -4,13 +4,204 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Music Library API</title>
+    <style>
+      :root {
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        color: #0f172a;
+      }
+
+      body {
+        margin: 0;
+        background: #edf2fa;
+      }
+
+      .hero {
+        background: linear-gradient(90deg, #0a4e9e, #1f4f9b);
+        color: #fff;
+        text-align: center;
+        padding: 2rem 1rem;
+      }
+
+      .hero h1 {
+        margin: 0;
+        font-size: clamp(1.7rem, 4vw, 2.6rem);
+      }
+
+      .hero p {
+        margin: 0.5rem 0 0;
+        opacity: 0.95;
+      }
+
+      main {
+        width: min(1240px, 94vw);
+        margin: 1.1rem auto 2rem;
+      }
+
+      .controls {
+        display: grid;
+        grid-template-columns: 1fr auto auto;
+        gap: 0.7rem;
+        margin-bottom: 0.7rem;
+      }
+
+      input,
+      select {
+        border: 1px solid #b8c2d8;
+        border-radius: 10px;
+        padding: 0.65rem 0.8rem;
+        background: #fff;
+        font-size: 1rem;
+      }
+
+      .filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.7rem;
+        margin-bottom: 1rem;
+        align-items: center;
+      }
+
+      .btn {
+        border: 0;
+        border-radius: 10px;
+        padding: 0.62rem 1rem;
+        color: #fff;
+        font-weight: 700;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+
+      .btn-search {
+        background: #0c63d7;
+      }
+
+      .btn-clear {
+        background: #7f93b2;
+      }
+
+      .btn-add {
+        background: #0f766e;
+      }
+
+      .status {
+        margin: 0 0 0.8rem;
+        font-weight: 600;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1rem;
+      }
+
+      .card {
+        background: #fff;
+        border: 1px solid #d8e0ef;
+        border-radius: 12px;
+        padding: 0.9rem;
+        box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
+      }
+
+      .badge {
+        display: inline-block;
+        background: #ccfbf1;
+        color: #115e59;
+        border-radius: 999px;
+        padding: 0.16rem 0.55rem;
+        font-size: 0.8rem;
+        font-weight: 700;
+      }
+
+      .card h3 {
+        margin: 0.55rem 0 0.2rem;
+      }
+
+      .muted {
+        color: #475569;
+      }
+
+      .api-links {
+        margin-top: 1rem;
+        padding: 0.9rem;
+        background: #fff;
+        border: 1px solid #d8e0ef;
+        border-radius: 12px;
+      }
+
+      .api-links ul {
+        margin: 0.55rem 0 0;
+        padding-left: 1rem;
+      }
+
+      .api-links a {
+        color: #0b5fd2;
+        text-decoration: none;
+      }
+    </style>
   </head>
   <body>
-    <h1>Music Library API</h1>
-    <p>The API is running.</p>
-    <ul>
-      <li><a href="/health">GET /health</a></li>
-      <li><a href="/api/albums">GET /api/albums</a></li>
-    </ul>
+    <header class="hero">
+      <h1>🎵 Music Library API</h1>
+      <p>Manage your album collection (API Server Running)</p>
+    </header>
+
+    <main>
+      <section class="controls">
+        <input type="text" placeholder="Search by album or artist..." />
+        <button class="btn btn-search" type="button">Search</button>
+        <button class="btn btn-clear" type="button">Clear</button>
+      </section>
+
+      <section class="filters">
+        <label>
+          Genre:
+          <select>
+            <option>All Genres</option>
+          </select>
+        </label>
+        <a class="btn btn-add" href="/api/albums">+ View Albums JSON</a>
+      </section>
+
+      <p class="status">Sample API preview cards</p>
+
+      <section class="cards">
+        <article class="card">
+          <span class="badge">✓ Available</span>
+          <h3>Midnight Signals</h3>
+          <p class="muted">by Aurora Drive</p>
+          <p class="muted">Synthwave • 2020 • 12 tracks</p>
+        </article>
+        <article class="card">
+          <span class="badge">✓ Available</span>
+          <h3>Echoes of Rain</h3>
+          <p class="muted">by Luna Harbor</p>
+          <p class="muted">Indie Pop • 2021 • 10 tracks</p>
+        </article>
+        <article class="card">
+          <span class="badge">✓ Available</span>
+          <h3>Neon Skies</h3>
+          <p class="muted">by Static Youth</p>
+          <p class="muted">Electronic • 2022 • 13 tracks</p>
+        </article>
+        <article class="card">
+          <span class="badge">✓ Available</span>
+          <h3>Sunset Protocol</h3>
+          <p class="muted">by Binary Coast</p>
+          <p class="muted">Dance • 2023 • 12 tracks</p>
+        </article>
+      </section>
+
+      <section class="api-links">
+        <strong>API Endpoints</strong>
+        <ul>
+          <li><a href="/health">GET /health</a></li>
+          <li><a href="/api/albums">GET /api/albums</a></li>
+          <li><a href="/docs">GET /docs (Generated Documentation)</a></li>
+        </ul>
+      </section>
+    </main>
   </body>
 </html>
