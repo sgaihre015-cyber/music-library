@@ -15,6 +15,7 @@ const artistInput = document.getElementById('artistInput');
 const genreInput = document.getElementById('genreInput');
 const yearInput = document.getElementById('yearInput');
 const tracksInput = document.getElementById('tracksInput');
+yearInput.max = String(new Date().getFullYear() + 1);
 
 let allAlbums = [];
 let editingId = null;
