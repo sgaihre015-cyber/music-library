@@ -10,21 +10,21 @@
 
 Set your working directory to:
 
-`/home/runner/work/music-library/music-library/cet252`
+`./cet252` (after extracting the submission ZIP)
 
 Then run commands from each component folder:
 
 - API:
-  - `cd /home/runner/work/music-library/music-library/cet252/API`
+  - `cd API`
   - `npm install`
   - `npm run docs`
   - `npm start`
   - Docs URL: `http://localhost:3001/docs`
 - Client (in another terminal):
-  - `cd /home/runner/work/music-library/music-library/cet252/CLIENT`
+  - `cd CLIENT`
   - `npm install`
   - `npm start`
   - Client URL: `http://127.0.0.1:4173`
 - Functional tests:
-  - `cd /home/runner/work/music-library/music-library/cet252/CLIENT`
+  - `cd CLIENT`
   - `npm test`

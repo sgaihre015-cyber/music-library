@@ -10,15 +10,22 @@ const docsDir = path.join(__dirname, '..', '..', 'APIDOC');
 app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
+const limiterBase = {
+  windowMs: 15 * 60 * 1000,
+  limit: 120,
+  standardHeaders: true,
+  legacyHeaders: false
+};
+const apiLimiter = rateLimit({
+  ...limiterBase,
+  message: { error: 'Too many requests, please try again later.' }
+});
+const docsLimiter = rateLimit({
+  ...limiterBase
+});
 app.use(
   '/api',
-  rateLimit({
-    windowMs: 15 * 60 * 1000,
-    limit: 120,
-    standardHeaders: true,
-    legacyHeaders: false,
-    message: { error: 'Too many requests, please try again later.' }
-  })
+  apiLimiter
 );
 
 function validateAlbum(payload) {
@@ -58,11 +65,7 @@ app.get('/', (_, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.get('/docs', (_, res) => {
-  res.sendFile(path.join(docsDir, 'index.html'));
-});
-
-app.use('/docs', express.static(docsDir));
+app.use('/docs', docsLimiter, express.static(docsDir));
 
 /**
  * @api {get} /api/albums List albums
