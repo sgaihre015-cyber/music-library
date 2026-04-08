@@ -93,7 +93,15 @@ async function fetchJson(endpoint, options) {
     headers: { 'Content-Type': 'application/json' },
     ...options
   });
-  const result = await response.json().catch(() => ({}));
+  let result = {};
+  try {
+    result = await response.json();
+  } catch (parseError) {
+    if (!response.ok) {
+      throw new Error(`Request failed with status ${response.status} and invalid JSON response`);
+    }
+    throw new Error(`Invalid JSON response: ${parseError.message}`);
+  }
   if (!response.ok) {
     throw new Error(result.error || `Request failed with status ${response.status}`);
   }
